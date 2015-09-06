@@ -7,7 +7,8 @@ public class PrimMatrix {
 	
 	public static void prim(int graph[][], int nVexs){
 		
-		 /* lowcost[i]记录以i为终点的边的最小权值，当lowcost[i]=0时表示终点i加入生成树 */
+		 /* lowcost[i]记录以i为终点的边的最小权值，当lowcost[i]=0时表示终点i加入生成树
+		  	记录的是权值*/
 		int lowcost[] = new int[nVexs];
 		
 		/* closeset[i]记录了边依附在U中的顶点*/
@@ -24,8 +25,8 @@ public class PrimMatrix {
 		
 		//初始化
 		for(int i=1; i<nVexs; i++){
-			lowcost[i] = graph[0][i];
-			closeset[i] = i;
+			lowcost[i] = graph[0][i];	/* 最短距离初始化为其他节点到1号节点的距离 */
+			closeset[i] = 0;			
 			visited[i] = false;
 		}
 			
@@ -44,6 +45,9 @@ public class PrimMatrix {
 			
 			visited[minIndex] = true;		//可见
 			sumWeight+=minCost;
+			
+			 /* 输出生成树边的信息:起点，终点，权值 */
+			//System.out.printf("%c - %c : %d\n", closeset[minIndex] + 'A', minIndex + 'A', minCost);
 			
 			//发现更小权值的边
 			for(int m=1; m<nVexs; m++){
@@ -91,3 +95,20 @@ public class PrimMatrix {
 		prim(graph,nVex);
 	}
 }
+
+/**
+ * 
+7 11
+1 2 7
+1 4 5
+2 3 8
+2 4 9
+2 5 7
+3 5 5
+4 5 15
+4 6 6
+5 6 8
+5 7 9
+6 7 11
+结果 39
+*/
