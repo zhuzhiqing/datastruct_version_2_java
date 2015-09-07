@@ -1,4 +1,4 @@
-package com.jason.other.algrithm;
+package com.jason.algrithm.other;
 //回溯思路求解全排列
 //http://blog.csdn.net/jarvischu/article/details/16067319
 public class TreaceBack_Package {

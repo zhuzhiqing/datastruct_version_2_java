@@ -1,4 +1,4 @@
-package com.jason.other.algrithm;
+package com.jason.algrithm.other;
 
 public class Perm {
 

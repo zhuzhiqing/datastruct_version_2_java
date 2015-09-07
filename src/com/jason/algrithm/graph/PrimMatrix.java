@@ -1,4 +1,4 @@
-package com.jason.graph.algrithm;
+package com.jason.algrithm.graph;
 
 import java.util.Scanner;
 
